@@ -10,3 +10,7 @@
 .project
 /log
 test.properties
+
+*.iml
+.idea/
+target/

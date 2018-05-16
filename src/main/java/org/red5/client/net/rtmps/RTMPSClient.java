@@ -135,6 +135,7 @@ public class RTMPSClient extends RTMPClient {
         }
 
         /** {@inheritDoc} */
+        @SuppressWarnings("deprecation")
         @Override
         public void exceptionCaught(IoSession session, Throwable cause) throws Exception {
             log.warn("Exception caught {}", cause.getMessage());
@@ -142,7 +143,7 @@ public class RTMPSClient extends RTMPClient {
                 log.error("Exception detail", cause);
             }
             //if there are any errors using ssl, kill the session
-            session.closeNow();
+            session.close(true);
         }
 
     }
